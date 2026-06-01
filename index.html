@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariposa ITZY</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#e6ccff;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+}
+
+/* Texto de fondo */
+.background-text{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    color:rgba(128,0,128,0.12);
+    font-size:60px;
+    font-weight:bold;
+    user-select:none;
+    z-index:0;
+}
+
+.background-text span{
+    transform:rotate(-20deg);
+}
+
+.butterfly{
+    position:relative;
+    width:120px;
+    height:80px;
+    animation:fly 8s infinite ease-in-out;
+    z-index:1;
+}
+
+.wing{
+    position:absolute;
+    width:60px;
+    height:80px;
+    background:#8a2be2;
+    border-radius:70% 30% 70% 30%;
+    animation:flap 0.25s infinite alternate;
+}
+
+.left{
+    left:0;
+    transform-origin:right center;
+}
+
+.right{
+    right:0;
+    transform:scaleX(-1);
+    transform-origin:left center;
+}
+
+.body-wing{
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:10px;
+    height:60px;
+    background:#4b0082;
+    border-radius:10px;
+    transform:translateX(-50%);
+}
+
+@keyframes flap{
+    from{transform:rotate(-25deg);}
+    to{transform:rotate(25deg);}
+}
+
+@keyframes fly{
+    0%   {transform:translate(-300px,100px);}
+    25%  {transform:translate(-100px,-50px);}
+    50%  {transform:translate(100px,50px);}
+    75%  {transform:translate(250px,-80px);}
+    100% {transform:translate(-300px,100px);}
+}
+</style>
+</head>
+<body>
+
+<div class="background-text">
+    <span>ITZY</span><span>ITZY</span><span>ITZY</span>
+    <span>ITZY</span><span>ITZY</span><span>ITZY</span>
+    <span>ITZY</span><span>ITZY</span><span>ITZY</span>
+</div>
+
+<div class="butterfly">
+    <div class="wing left"></div>
+    <div class="wing right"></div>
+    <div class="body-wing"></div>
+</div>
+
+</body>
+</html>
